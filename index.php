@@ -40,6 +40,8 @@ class Movie
 
 $matrix = new Movie('Matrix', 120, 'Sci-fi', 'Sorelle Wachowski');
 
+$pulpfiction = new Movie('Pulp Fiction', 140, 'Pulp', 'Quentin Tarantino');
+
 ?>
 
 <!DOCTYPE html>
@@ -61,18 +63,34 @@ $matrix = new Movie('Matrix', 120, 'Sci-fi', 'Sorelle Wachowski');
     <div class="container">
         <div class="row mt-5">
             <div class="col-6">
-                <div class="card py-4 text-center">
-                    <h2>
+                <div class="card py-4 bg-info text-center">
+                    <h2 class="border-bottom border-3 border-black pb-3">
                         <?php echo $matrix->getName() ?>
                     </h2>
                     <p>
-                        <?php echo $matrix->getDuration() ?>
+                        <strong>Duration:</strong> <?php echo $matrix->getDuration() ?>
                     </p>
                     <p>
-                        <?php echo $matrix->getGenre() ?>
+                        <strong>Genre:</strong> <?php echo $matrix->getGenre() ?>
                     </p>
                     <p>
-                        <?php echo $matrix->getDirector() ?>
+                        <strong>Director:</strong> <?php echo $matrix->getDirector() ?>
+                    </p>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card py-4 bg-info text-center">
+                    <h2 class="border-bottom border-3 border-black pb-3">
+                        <?php echo $pulpfiction->getName() ?>
+                    </h2>
+                    <p>
+                        <strong>Duration:</strong> <?php echo $pulpfiction->getDuration() ?>
+                    </p>
+                    <p>
+                        <strong>Genre:</strong> <?php echo $pulpfiction->getGenre() ?>
+                    </p>
+                    <p>
+                        <strong>Director:</strong> <?php echo $pulpfiction->getDirector() ?>
                     </p>
                 </div>
             </div>
