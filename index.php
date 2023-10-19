@@ -7,6 +7,15 @@ class Movie
     public $duration;
     public $genre;
     public $director;
+
+
+    function __construct($name, $duration, $genre, $director)
+    {
+        $this->name = $name;
+        $this->duration = $duration;
+        $this->genre = $genre;
+        $this->director = $director;
+    }
 }
 
 
