@@ -1,5 +1,14 @@
 <?php
 
+class Movie
+{
+
+    public $name;
+    public $duration;
+    public $genre;
+    public $director;
+}
+
 
 
 
