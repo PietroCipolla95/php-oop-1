@@ -1,50 +1,8 @@
 <?php
 
-class Movie
-{
+include __DIR__ . '/models/movie.php';
 
-    public $name;
-    public $duration;
-    public $genre;
-    public $director;
-
-
-    function __construct($name, $duration, $genre, $director)
-    {
-        $this->name = $name;
-        $this->duration = $duration;
-        $this->genre = $genre;
-        $this->director = $director;
-    }
-
-    function getName()
-    {
-        return $this->name;
-    }
-
-    function getDuration()
-    {
-        return $this->duration;
-    }
-
-    function getGenre()
-    {
-        return $this->genre;
-    }
-
-    function getDirector()
-    {
-        return $this->director;
-    }
-}
-
-$movies = [];
-
-$matrix = new Movie('Matrix', 120, 'Sci-fi', 'Sorelle Wachowski');
-
-$pulpfiction = new Movie('Pulp Fiction', 140, 'Pulp', 'Quentin Tarantino');
-
-array_push($movies, $matrix, $pulpfiction);
+include __DIR__ . '/db.php'
 
 ?>
 
@@ -71,18 +29,20 @@ array_push($movies, $matrix, $pulpfiction);
             <?php foreach ($movies as $movie) : ?>
                 <div class="col-6">
                     <div class="card py-4 bg-info text-center">
-                        <h2 class="border-bottom border-3 border-black pb-3">
+                        <h2 class="border-bottom border-3 border-black pb-4">
                             <?php echo $movie->getName() ?>
                         </h2>
-                        <p>
-                            <strong>Duration:</strong> <?php echo $movie->getDuration() ?>
-                        </p>
-                        <p>
-                            <strong>Genre:</strong> <?php echo $movie->getGenre() ?>
-                        </p>
-                        <p>
-                            <strong>Director:</strong> <?php echo $movie->getDirector() ?>
-                        </p>
+                        <div class="card-body pt-4">
+                            <p>
+                                <strong>Duration:</strong> <?php echo $movie->getDuration() ?>
+                            </p>
+                            <p>
+                                <strong>Genre:</strong> <?php echo $movie->getGenre() ?>
+                            </p>
+                            <p>
+                                <strong>Director:</strong> <?php echo $movie->getDirector() ?>
+                            </p>
+                        </div>
                     </div>
                 </div>
             <?php endforeach ?>
