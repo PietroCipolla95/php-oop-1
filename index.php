@@ -38,9 +38,13 @@ class Movie
     }
 }
 
+$movies = [];
+
 $matrix = new Movie('Matrix', 120, 'Sci-fi', 'Sorelle Wachowski');
 
 $pulpfiction = new Movie('Pulp Fiction', 140, 'Pulp', 'Quentin Tarantino');
+
+array_push($movies, $matrix, $pulpfiction);
 
 ?>
 
@@ -60,40 +64,28 @@ $pulpfiction = new Movie('Pulp Fiction', 140, 'Pulp', 'Quentin Tarantino');
 <body class="bg-black">
 
 
+
+
     <div class="container">
         <div class="row mt-5">
-            <div class="col-6">
-                <div class="card py-4 bg-info text-center">
-                    <h2 class="border-bottom border-3 border-black pb-3">
-                        <?php echo $matrix->getName() ?>
-                    </h2>
-                    <p>
-                        <strong>Duration:</strong> <?php echo $matrix->getDuration() ?>
-                    </p>
-                    <p>
-                        <strong>Genre:</strong> <?php echo $matrix->getGenre() ?>
-                    </p>
-                    <p>
-                        <strong>Director:</strong> <?php echo $matrix->getDirector() ?>
-                    </p>
+            <?php foreach ($movies as $movie) : ?>
+                <div class="col-6">
+                    <div class="card py-4 bg-info text-center">
+                        <h2 class="border-bottom border-3 border-black pb-3">
+                            <?php echo $movie->getName() ?>
+                        </h2>
+                        <p>
+                            <strong>Duration:</strong> <?php echo $movie->getDuration() ?>
+                        </p>
+                        <p>
+                            <strong>Genre:</strong> <?php echo $movie->getGenre() ?>
+                        </p>
+                        <p>
+                            <strong>Director:</strong> <?php echo $movie->getDirector() ?>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-6">
-                <div class="card py-4 bg-info text-center">
-                    <h2 class="border-bottom border-3 border-black pb-3">
-                        <?php echo $pulpfiction->getName() ?>
-                    </h2>
-                    <p>
-                        <strong>Duration:</strong> <?php echo $pulpfiction->getDuration() ?>
-                    </p>
-                    <p>
-                        <strong>Genre:</strong> <?php echo $pulpfiction->getGenre() ?>
-                    </p>
-                    <p>
-                        <strong>Director:</strong> <?php echo $pulpfiction->getDirector() ?>
-                    </p>
-                </div>
-            </div>
+            <?php endforeach ?>
         </div>
     </div>
 
